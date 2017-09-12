@@ -10,6 +10,21 @@
         <ul id="navbarUl">
             <li class="navbarLi"><a class="active" href="?">Home</a></li>
             <li class="navbarLi"><a href="?">Categories</a></li>
+            <li class="navbarLi"><a href="../cart">Items In Cart: <?php echo $itemsInCart;?></a></li>
+            <li class="navbarLi">
+                <form action="" method="post" id="selectCustomer">
+                    <select name="customerId">
+                        <?php foreach ($customers as $customer): ?>
+                            <option value="<?php echo $customer['id'];?>"
+                                <?php
+                                if ($customer['id'] == $customerId){
+                                    echo "selected";
+                                }?>><?php echo $customer['name'];?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <input type="submit" value="Select" name="action">
+                </form>
+            </li>
         </ul>
     </div>
     <div id="products" style="position: relative; top: 2em;">
@@ -26,20 +41,6 @@
                 </form>
             </div>
         <?php endforeach; ?>
-        <!--Getur þú fært þetta hérna upp í navigationBarið-->
-        <form action="" method="post" id="selectCustomer">
-            <select name="customerId">
-                <?php foreach ($customers as $customer): ?>
-                    <option value="<?php echo $customer['id'];?>"
-                    <?php
-                        if ($customer['id'] == $customerId){
-                            echo "selected";
-                        }?>><?php echo $customer['name'];?></option>
-                <?php endforeach; ?>
-            </select>
-            <input type="submit" value="Select" name="action">
-        </form>
-        <!--Endar hér-->
     </div>
     </body>
 </html>

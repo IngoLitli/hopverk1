@@ -8,6 +8,10 @@
     $customerId = $_SESSION['customerId'];
 
     if (isset($_POST['action']) && $_POST['action'] == "Add to cart"){
+        $product_id = $_POST["productId"];
+        $customer_id = $_POST["customerId"];
+        include_once $_SERVER['DOCUMENT_ROOT'] . '/nemendur/hopur3/store/db/cart/addItemWhereCustomerId.php';
+
         header('Location: .');
     }
 
@@ -33,6 +37,11 @@ foreach ($result as $row):
         'name' => $row['name']
     );
 endforeach;
+
+include_once $_SERVER['DOCUMENT_ROOT'] . '/nemendur/hopur3/store/db/cart/getItemCount.php';
+
+$itemsInCart = $result['Item Count']
+
 
 
 ?>

@@ -11,6 +11,7 @@
     left:0;
     left:0;
     width:100%;
+    z-index: 1000;
 }
 #navbarUl {
     position: relative;
@@ -21,17 +22,13 @@
     background-color: #529bff;
     height:2.5em;
     text-align:center;
-
-
-
-
 }
 
 .navbarLi {
     position:relative;
     top:0.5em;
     border: 1px solid #529bff;
-    max-width:10em;
+    max-width:15em;
     display:inline-block;
 }
 
